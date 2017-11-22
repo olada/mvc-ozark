@@ -34,7 +34,6 @@ public class IndexController {
     }
 
     @POST
-    @Path("/update")
     @View("index/index.th.html")
     public void update(@Valid @BeanParam TechatEvent postedTechatEvent) {
         logger.info("Posted Form-Object: {}", postedTechatEvent);
