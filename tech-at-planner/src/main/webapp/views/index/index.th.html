@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Tech@-Planner</title>
+        <meta charset="utf-8" />
+    </head>
+    <body>
+        <form action="/tech-at-planner/update" method="POST">
+            <input type="text" name="thema" placeholder="Thema" />
+            <input type="text" name="vortragende" placeholder="Vortragende" />
+            <input type="date" name="date" placeholder="dd.MM.yyyy" />
+            <input type="time" name="time" placeholder="HH:mm" />
+            <button type="submit">Hinzufügen</button>
+        </form>
+        <p>
+            <span th:text="${postedEvent} ?: 'Formular abschicken, um ein Event anzulegen oder ein Event zu verändern.'">
+                Formular abschicken, um ein Event anzulegen oder ein Event zu verändern.
+            </span>
+        </p>
+    </body>
+</html>
