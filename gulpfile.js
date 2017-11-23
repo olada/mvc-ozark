@@ -26,11 +26,7 @@ gulp.task("rename-presentation-to-index-in-presentation-folder", ["copy-presenta
         .pipe(gulp.dest("./presentation"));
 });
 
-gulp.task("install-presentation-dependencies", function() {
-    return run("npm --prefix ./presentation install ./presentation").exec();
-});
-
-gulp.task("present", ["rename-presentation-to-index-in-presentation-folder", "install-presentation-dependencies"], function() {
+gulp.task("present", ["rename-presentation-to-index-in-presentation-folder"], function() {
     console.log("Starting local server to serve presentation on localhost:8000");
     return run("npm --prefix ./presentation run start").exec();
 });
