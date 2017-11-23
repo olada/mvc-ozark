@@ -7,6 +7,14 @@ var run = require("gulp-run");
 var rename = require("gulp-rename");
 var clean = require("gulp-clean");
 
+/**
+ * Pipeline:
+ * - Delete ./presentation/index.html (so we can easily replace it)
+ * - Copy ./presentation.html to ./presentation/presentation.html
+ * - Rename ./presentation/presentation.html in ./presentation/index.html
+ * - Call npm start within ./presentation (spawns webserver displaying the presentation)
+ */
+
 gulp.task("delete-default-presentation-index-file", function() {
     console.log("Deleting ./presentation/index.html file");
     return gulp.src("./presentation/index.html")
