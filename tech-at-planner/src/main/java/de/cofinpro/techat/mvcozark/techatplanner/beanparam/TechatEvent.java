@@ -5,7 +5,6 @@ import de.cofinpro.techat.mvcozark.shared.formparam.Uhrzeit;
 import lombok.Data;
 
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 import javax.ws.rs.FormParam;
 
@@ -24,10 +23,10 @@ public class TechatEvent {
     private String vortragende;
 
     @FormParam("date")
-    @Pattern(regexp = "\\d{2}.\\d{2}.\\d{4}")
+    @NotNull
     private Datum date;
 
     @FormParam("time")
-    @Pattern(regexp = "\\d{2}:\\d{2}")
+    @NotNull
     private Uhrzeit time;
 }

@@ -5,9 +5,9 @@
         <meta charset="utf-8" />
     </head>
     <body>
-        <form action="/tech-at-planner" method="POST">
-            <input type="text" name="thema" placeholder="Thema" />
-            <input type="text" name="vortragende" placeholder="Vortragende" />
+        <form action="/tech-at-planner/" method="POST">
+            <input type="text" name="thema" placeholder="Thema" th:value="${postedEvent != null ? postedEvent.thema : ''}"/>
+            <input type="text" name="vortragende" placeholder="Vortragende" th:value="${postedEvent != null ? postedEvent.vortragende : ''}"/>
             <input type="date" name="date" placeholder="dd.MM.yyyy" />
             <input type="time" name="time" placeholder="HH:mm" />
             <button type="submit">Hinzufügen</button>
@@ -16,6 +16,14 @@
             <span th:text="${postedEvent} ?: 'Formular abschicken, um ein Event anzulegen oder ein Event zu verändern.'">
                 Formular abschicken, um ein Event anzulegen oder ein Event zu verändern.
             </span>
+
+            <span th:if="${not isValid and isValid != null}? 'Das Formular enthält Fehler'" style="color:#c00; font-weight:bold;">
+                Das Formular enthält Fehler.
+            </span>
+
+            <div>
+                <span th:each="violation : ${violations}" th:text="${violation}">Violation N..</span>
+            </div>
         </p>
     </body>
 </html>
