@@ -1,5 +1,10 @@
 # mvc-ozark
 
+## Requirements
+Following tools are installed:
+* node.js and npm
+* maven
+
 ## Project Checkout
 Following commands need to be run once.
 ```
@@ -10,6 +15,6 @@ git submodule update
 npm install
 npm --prefix ./presentation install ./presentation
 ```
-## Run this project
-aggregator-Projekt: mvn clean install
-```
+## Run Presentation
+Run `npm run presentation` in root project folder. 
+A new browser tab should open automatically pointing to _localhost:8000_.
