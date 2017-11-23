@@ -30,3 +30,7 @@ gulp.task("present", ["rename-presentation-to-index-in-presentation-folder"], fu
     console.log("Starting local server to serve presentation on localhost:8000");
     return run("npm --prefix ./presentation run start").exec();
 });
+
+// If changes are made to presentation.html, we will make sure that our pipeline is triggered again
+// That way, we only have to refresh the already running browser tab to retrieve the new presentation
+var watcher = gulp.watch("./presentation.html", ["rename-presentation-to-index-in-presentation-folder"]);
