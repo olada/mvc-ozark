@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>MVC 1.0 | Tech@-Presentation | David Olah, Cofinpro AG</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/black.css">
@@ -36,6 +36,11 @@
 
 			.reveal .highlight {
 				color: #d29626;
+			}
+
+			.reveal .img-source {
+				font-size:0.4em;
+				font-style: italic;
 			}
 		</style>
 	</head>
@@ -71,6 +76,13 @@
 							</ul>
 						</p>
 					</section>
+					<section>
+						<h2>MVC Pattern adapted for Web</h2>
+						<img src="etc/images/MVC_abbildung1_Oelmann.png" alt="MVC_abbildung1_Oelmann" />
+						<br /><span class="img-source">Source: https://www.informatik-aktuell.de/entwicklung/programmiersprachen/das-neue-mvc-webframework-in-java-ee-8.html</span>
+					</section>
+					<section>
+					</section>
 				</section>
 
 				<section>
@@ -89,38 +101,36 @@
 						</table>
 						</p>
 					</section>
+					<section>
+						<h3>Similarities between MVC &amp; JSF</h3>
+						<img src="etc/images/MVCabbildung2_Oelmann.png" alt="MVCabbildung2_Oelmann" />
+						<br /><span class="img-source">Source: https://www.informatik-aktuell.de/entwicklung/programmiersprachen/das-neue-mvc-webframework-in-java-ee-8.html</span>
+					</section>
+				</section>
+
+				<section data-markdown>
+					<textarea data-template>
+						```
+						@Path("/")
+						@Controller
+						@RequestScoped
+						public class IndexController {
+						}
+						```
+					</textarea>
 				</section>
 
 				<!-- Ende -->
 				<section data-background="https://media.giphy.com/media/3ornk6AAnb9wZk758k/giphy.gif"></section>
 				
-				<section>
-					<h2>Sources</h2>
-					<p>
-					<ul>
-						<li>
-							<a href="https://www.developer.com/java/ent/introduction-to-the-new-mvc-1.0-ozark-ri.html">
-								https://www.developer.com/java/ent/introduction-to-the-new-mvc-1.0-ozark-ri.html
-							</a>
-						</li>
-						<li>
-							<a href="https://www.informatik-aktuell.de/entwicklung/programmiersprachen/das-neue-mvc-webframework-in-java-ee-8.html">
-								https://www.informatik-aktuell.de/entwicklung/programmiersprachen/das-neue-mvc-webframework-in-java-ee-8.html
-							</a>
-						</li>
-						<li>
-							<a href="https://blog.kaltepoth.de/posts/2015/04/21/view-technologies-for-mvc-1-0.html">
-								https://blog.kaltepoth.de/posts/2015/04/21/view-technologies-for-mvc-1-0.html
-							</a>
-						</li>
-						<li>
-							<a href="https://de.slideshare.net/masatoshitada7/getting-start-java-ee-actionbased-mvc-with-thymeleaf">
-								https://de.slideshare.net/masatoshitada7/getting-start-java-ee-actionbased-mvc-with-thymeleaf
-							</a>
-						</li>
-					</ul>
-				</ul>
-					</p>
+				<section data-markdown>
+					<textarea data-template>
+						# Sources
+						* https://www.developer.com/java/ent/introduction-to-the-new-mvc-1.0-ozark-ri.html
+						* https://www.informatik-aktuell.de/entwicklung/programmiersprachen/das-neue-mvc-webframework-in-java-ee-8.html
+						* https://blog.kaltepoth.de/posts/2015/04/21/view-technologies-for-mvc-1-0.html
+						* https://de.slideshare.net/masatoshitada7/getting-start-java-ee-actionbased-mvc-with-thymeleaf
+					</textarea>
 				</section>
 			</div>
 		</div>
