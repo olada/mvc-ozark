@@ -24,3 +24,4 @@ Setup ~~Glassfish 5~~ Wildfly 10.1.Final in your IDE and add the mvc subsystem a
 Noteworthy for IntelliJ: Make sure, that you build the war files using `mvn package`.
 Once the server is running and the war files are deployed, following endpoints can be navigated to:
 * Tech@-Planner: http://localhost:8080/tech-at-planner
+* Sandbox: http://localhost:8080/sandbox
