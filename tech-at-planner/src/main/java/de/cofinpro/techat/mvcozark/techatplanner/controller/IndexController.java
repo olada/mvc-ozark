@@ -44,7 +44,6 @@ public class IndexController {
     @Path("/jsp")
     @View("index/index.jsp")
     public void getIndexJsp() {
-        logger.debug("TopicsMessage: {}", possibleTopicsBean.getTopicsMessage());
     }
 
     @POST

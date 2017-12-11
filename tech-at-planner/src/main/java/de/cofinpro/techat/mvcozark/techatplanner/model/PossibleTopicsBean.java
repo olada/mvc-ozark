@@ -20,14 +20,13 @@ public class PossibleTopicsBean {
     @PostConstruct
     public void initialize() {
         logger.debug("Initializing topics..");
-        this.topicsMessage = "GraphQL, neo4J als Graph-DB, Impressionen aus dem DevOps-Alltag in VV";
+        this.topicsMessage = "" +
+                "GraphQL, " +
+                "neo4J als Graph-DB, " +
+                "Impressionen aus dem DevOps-Alltag in VV";
     }
 
     public String getTopicsMessage() {
         return topicsMessage;
-    }
-
-    public void setTopicsMessage(String topicsMessage) {
-        this.topicsMessage = topicsMessage;
     }
 }

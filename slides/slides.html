@@ -108,16 +108,103 @@
 					</section>
 				</section>
 
-				<section data-markdown>
-					<textarea data-template>
-						```
-						@Path("/")
-						@Controller
-						@RequestScoped
-						public class IndexController {
-						}
-						```
-					</textarea>
+				<section>
+					<section>
+						<h2>Beispiel für Zugriff auf <code style="color:#ff0;">@Named</code>-Beans mit JSP</h2>
+
+						Simples Beispiel: Text aus einer Named-Bean darstellen
+					</section>
+
+					<section data-markdown>
+						<textarea data-template>
+							## Controller
+
+							```
+@Path("/")
+@Controller
+@RequestScoped
+public class IndexController {
+
+	@Inject
+	private PossibleTopicsBean possibleTopicsBean;
+
+	@GET
+	@Path("/jsp")
+	@View("index/index.jsp")
+	public void getIndexJsp() {
+	}
+}
+							```
+						</textarea>
+					</section>
+
+					<section data-markdown>
+						<textarea data-template>
+							## @Named-Bean
+
+							```
+@Named("possibleTopics")
+@ApplicationScoped
+public class PossibleTopicsBean {
+    @Inject
+    private Logger logger;
+    private String topicsMessage;
+
+    @PostConstruct
+    public void initialize() {
+        logger.debug("Initializing topics..");
+        this.topicsMessage = "" +
+                "GraphQL, " +
+                "neo4J als Graph-DB, " +
+                "Impressionen aus dem DevOps-Alltag in VV";
+    }
+
+    public String getTopicsMessage() {
+        return topicsMessage;
+    }
+}
+							```
+						</textarea>
+					</section>
+
+					<section data-markdown>
+						<textarea data-template>
+							## JSP
+
+							```
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%><html>
+<head>
+    <title>Index JSP</title>
+</head>
+<body>
+    <h1>Hello World</h1>
+
+    <p>${possibleTopics.topicsMessage}</p>
+</body>
+</html>
+
+							```
+						</textarea>
+					</section>
+
+					<section data-markdown>
+						<textarea data-template>
+							## Generated Output
+
+							```
+<html>
+<head>
+    <title>Index JSP</title>
+</head>
+<body>
+    <h1>Hello World</h1>
+
+    <p>GraphQL, neo4J als Graph-DB, Impressionen aus dem DevOps-Alltag in VV</p>
+</body>
+</html>
+							```
+						</textarea>
+					</section>
 				</section>
 
 				<section>
@@ -137,8 +224,9 @@
 						<ul>
 							<li>
 								@gtudan created a subsystem for wildfly which
-								automatically adds ozark as system dependencies
-								as soon it finds
+								automatically adds ozark mvc-spec annotations
+								as soon it finds the <code>@Controller</code> annotation from
+								<code>javax.mvc.annotation.Controller</code>
 							</li>
 							<li>
 								Wildfly is <span style="color:#0c0; font-weight:bold;">way</span> faster than
