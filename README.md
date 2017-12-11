@@ -25,3 +25,6 @@ Noteworthy for IntelliJ: Make sure, that you build the war files using `mvn pack
 Once the server is running and the war files are deployed, following endpoints can be navigated to:
 * Tech@-Planner: http://localhost:8080/tech-at-planner
 * Sandbox: http://localhost:8080/sandbox
+
+## To-Do:
+* Unter Wildfly kann der HttpServletRequest nicht mehr injected werden. -> Fixen
