@@ -1,15 +1,16 @@
 package de.cofinpro.techat.mvcozark.techatplanner.controller;
 
 import de.cofinpro.techat.mvcozark.techatplanner.beanparam.TechatEvent;
+import de.cofinpro.techat.mvcozark.techatplanner.model.PossibleTopicsBean;
 import org.slf4j.Logger;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
-import javax.mvc.Controller;
 import javax.mvc.Models;
-import javax.mvc.View;
-import javax.mvc.validation.ValidationResult;
+import javax.mvc.annotation.Controller;
+import javax.mvc.annotation.View;
 import javax.validation.Valid;
+import javax.validation.executable.ExecutableType;
 import javax.validation.executable.ValidateOnExecution;
 import javax.ws.rs.BeanParam;
 import javax.ws.rs.GET;
@@ -30,7 +31,7 @@ public class IndexController {
     private Models models;
 
     @Inject
-    private ValidationResult validationResult;
+    private PossibleTopicsBean possibleTopicsBean;
 
     @GET
     @Path("/")
@@ -39,16 +40,19 @@ public class IndexController {
 
     }
 
+    @GET
+    @Path("/jsp")
+    @View("index/index.jsp")
+    public void getIndexJsp() {
+        logger.debug("TopicsMessage: {}", possibleTopicsBean.getTopicsMessage());
+    }
+
     @POST
     @Path("/")
     @View("index/index.th.html")
+    @ValidateOnExecution(type = ExecutableType.NONE)
     public void update(@Valid @BeanParam TechatEvent postedTechatEvent) {
         logger.info("Posted Form-Object: {}", postedTechatEvent);
-        logger.info("ValidationResult: {}", validationResult);
         models.put("postedEvent", postedTechatEvent);
-        models.put("isValid", !validationResult.isFailed());
-        if (validationResult.isFailed()) {
-            models.put("violations", validationResult.getAllViolations());
-        }
     }
 }

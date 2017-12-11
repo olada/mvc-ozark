@@ -1,6 +1,6 @@
 package de.cofinpro.techat.mvcozark.sandbox.controller;
 
-import javax.mvc.Controller;
+import javax.mvc.annotation.Controller;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 

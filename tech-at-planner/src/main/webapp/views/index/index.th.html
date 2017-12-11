@@ -16,14 +16,9 @@
             <span th:text="${postedEvent} ?: 'Formular abschicken, um ein Event anzulegen oder ein Event zu verändern.'">
                 Formular abschicken, um ein Event anzulegen oder ein Event zu verändern.
             </span>
-
-            <span th:if="${not isValid and isValid != null}? 'Das Formular enthält Fehler'" style="color:#c00; font-weight:bold;">
-                Das Formular enthält Fehler.
-            </span>
-
-            <div>
-                <span th:each="violation : ${violations}" th:text="${violation}">Violation N..</span>
-            </div>
+        </p>
+        <p>
+            <!--<span th:text="${possibleTopics.topicsMessage}">Hier sollte der Themenspeicher zu sehen sein.</span>-->
         </p>
     </body>
 </html>

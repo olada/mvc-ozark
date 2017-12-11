@@ -6,10 +6,10 @@ import org.slf4j.Logger;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
-import javax.mvc.Controller;
 import javax.mvc.Models;
-import javax.mvc.View;
 import javax.mvc.Viewable;
+import javax.mvc.annotation.Controller;
+import javax.mvc.annotation.View;
 import javax.servlet.http.HttpSession;
 import javax.ws.rs.*;
 import javax.ws.rs.core.Response;

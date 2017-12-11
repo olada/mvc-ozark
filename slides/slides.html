@@ -120,17 +120,55 @@
 					</textarea>
 				</section>
 
+				<section>
+					<section>
+						<h2>Fazit</h2>
+
+						Glassfish 5 is <span style="color:#c00; font-weight:bold;">not stable</span> with Ozark.
+						<br /><br />
+						But....
+					</section>
+					<section data-background="etc/images/rotating-gregor-counterclockwise.gif">
+						<h2>@gtudan to the rescue!</h2>
+					</section>
+					<section>
+						<h2>MVC 1.0 on Wildfly</h2>
+
+						<ul>
+							<li>
+								@gtudan created a subsystem for wildfly which
+								automatically adds ozark as system dependencies
+								as soon it finds
+							</li>
+							<li>
+								Wildfly is <span style="color:#0c0; font-weight:bold;">way</span> faster than
+								Glassfish (and has no weirdrequest cycle loops which lead to
+								stack overflows (<em>not the website</em>).
+							</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Recommendation</h2>
+
+						If you want to use it, you should use Wildfly <br />
+						(tested on Wildfly 10.1.0)
+					</section>
+				</section>
+
 				<!-- Ende -->
 				<section data-background="https://media.giphy.com/media/3ornk6AAnb9wZk758k/giphy.gif"></section>
 				
-				<section data-markdown>
-					<textarea data-template>
-						# Sources
-						* https://www.developer.com/java/ent/introduction-to-the-new-mvc-1.0-ozark-ri.html
-						* https://www.informatik-aktuell.de/entwicklung/programmiersprachen/das-neue-mvc-webframework-in-java-ee-8.html
-						* https://blog.kaltepoth.de/posts/2015/04/21/view-technologies-for-mvc-1-0.html
-						* https://de.slideshare.net/masatoshitada7/getting-start-java-ee-actionbased-mvc-with-thymeleaf
-					</textarea>
+				<section>
+					<h2>Sources</h2>
+
+					<ul>
+						<li><a href="https://www.developer.com/java/ent/introduction-to-the-new-mvc-1.0-ozark-ri.html">https://www.developer.com/java/ent/introduction-to-the-new-mvc-1.0-ozark-ri.html</a></li>
+						<li><a href="https://blog.kaltepoth.de/posts/2015/04/21/view-technologies-for-mvc-1-0.html">https://blog.kaltepoth.de/posts/2015/04/21/view-technologies-for-mvc-1-0.html</a></li>
+						<li><a href="https://de.slideshare.net/masatoshitada7/getting-start-java-ee-actionbased-mvc-with-thymeleaf">https://de.slideshare.net/masatoshitada7/getting-start-java-ee-actionbased-mvc-with-thymeleaf</a></li>
+						<li><a href="https://www.mvc-spec.org/learn/">https://www.mvc-spec.org/learn/</a></li>
+						<li><a href="http://mrbool.com/getting-started-with-action-oriented-mvc-on-java-ee-8/34525">http://mrbool.com/getting-started-with-action-oriented-mvc-on-java-ee-8/34525</a></li>
+						<li><a href="https://github.com/gtudan/wildfly-ozark">https://github.com/gtudan/wildfly-ozark</a></li>
+					</ul>
 				</section>
 			</div>
 		</div>
