@@ -26,4 +26,4 @@ Once the server is running and the war files are deployed, following endpoints c
 * Tech@-Planner: http://localhost:8080/tech-at-planner
 
 ## Example Configuration in IntelliJ IDEA
-![Run Configuration #1](./slides/images/2017-12-11 22_54_39-Run_Debug Configurations.png)
+![Run Configuration #1](slides/images/2017-12-11 22_54_39-Run_Debug Configurations.png)
